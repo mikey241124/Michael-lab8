@@ -15,7 +15,7 @@ def encode(password):
 def decode(password):
     decoded_password = ""
     for i in range(0, len(password)):
-        decoded_password += str(int(password[i]) - 3)
+        decoded_password += str(((int(password[i]) + 10) - 3)%10)
     return decoded_password
 
 def main():
