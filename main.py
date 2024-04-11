@@ -5,10 +5,20 @@ def encode(password):
     list_num = []
     encoded = ''
     for i in range(0, len(password)):
-        list_num.append(int(password[i:i + 1]) + 3)
+        list_num.append(int(password[i:i + 1]))
+    for i in range(0, len(password)):
+        if list_num[i] == 7:
+            list_num[i] = 0
+        elif list_num[i] == 8:
+            list_num[i] = 1
+        elif list_num[i] == 9:
+            list_num[i] = 2
+        else:
+            list_num[i] = list_num[i] + 3
     for i in range(0, len(password)):
         encoded = encoded + str(list_num[i])
     print('Your password has been encoded and stored')
+    print(encoded)
     return encoded
 
 #Decode Function (Written by Juan)
