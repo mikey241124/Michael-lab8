@@ -1,28 +1,26 @@
-#Michael Salemi's Encode function
+# Michael Salemi Encode function
 
 def encode(password):
-    to_encode = 0
-    run = False
-    try:
-        to_encode = int(input('Please enter your password to encode: '))
-        run = True
-    except ValueError:
-        print('Please enter a valid password!')
-
-    if run:
-        password = str(password)
-        list = []
-        for i in range(0, len(to_encode)):
-            list.append(int(password[i:i+1]) + 3)
-
-
+    password = str(password)
+    list_num = []
+    encoded = ''
+    for i in range(0, len(password)):
+        list_num.append(int(password[i:i + 1]) + 3)
+    for i in range(0, len(password)):
+        encoded = encoded + str(list_num[i])
+    print('Your password has been encoded and stored')
+    return encoded
 
 
 def decode():
     pass
 
+
 def main():
     running = True
+
+    stored_password = ''
+
     while running:
         print('Menu')
         print('-------------')
@@ -38,16 +36,27 @@ def main():
             pass
 
         if user_in == 1:
-            encode()
+            to_encode = 0
+            try:
+                to_encode = int(input('Please enter your password to encode: '))
+            except ValueError:
+                print('Please enter a valid password!')
 
-        if user_in == 2:
+            to_encode = str(to_encode)
+            password = encode(to_encode)
+            stored_password = password
+
+        elif user_in == 2:
             decode()
 
-        if user_in == 3:
+        elif user_in == 3:
             running = False
 
         else:
             print("Please enter a valid input")
+
+        print('')
+
 
 if __name__ == '__main__':
     main()
