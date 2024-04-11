@@ -11,10 +11,12 @@ def encode(password):
     print('Your password has been encoded and stored')
     return encoded
 
-
-def decode():
-    pass
-
+#Decode Function (Written by Juan)
+def decode(password):
+    decoded_password = ""
+    for i in range(0, len(password)):
+        decoded_password += str(int(password[i]) - 3)
+    return decoded_password
 
 def main():
     running = True
@@ -47,7 +49,8 @@ def main():
 
 
         elif user_in == 2:
-            decode()
+            #Print string (Modified by Juan)
+            print(f"The encoded password is {stored_password}, and the original password is {decode(stored_password)}.")
 
         elif user_in == 3:
             running = False
