@@ -18,7 +18,6 @@ def encode(password):
     for i in range(0, len(password)):
         encoded = encoded + str(list_num[i])
     print('Your password has been encoded and stored')
-    print(encoded)
     return encoded
 
 #Decode Function (Written by Juan)
