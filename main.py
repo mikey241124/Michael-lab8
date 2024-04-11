@@ -39,12 +39,12 @@ def main():
             to_encode = 0
             try:
                 to_encode = int(input('Please enter your password to encode: '))
+                to_encode = str(to_encode)
+                password = encode(to_encode)
+                stored_password = password
             except ValueError:
                 print('Please enter a valid password!')
 
-            to_encode = str(to_encode)
-            password = encode(to_encode)
-            stored_password = password
 
         elif user_in == 2:
             decode()
